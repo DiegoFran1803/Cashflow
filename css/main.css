@@ -32,22 +32,22 @@ body {
     color: var(--dark);
 }
 
-.footbar {
-    position: relative;
-}
-
 .version {
     position: absolute;
-    bottom: 63px;
+    bottom: 70px;
     left: 0;
     width: 100%;
     text-align: center;
 }
 
 .version p {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     font-weight: 300;
     color: var(--white);
+}
+
+.footbar {
+    position: relative;
 }
 
 .version .v-menu {

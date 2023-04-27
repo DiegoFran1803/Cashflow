@@ -15,45 +15,43 @@
         <link rel="stylesheet" href="./css/menu.css">
     </head>
 <body>
-    <div class="body">
-        <header>
-            <nav>
-                <h4>Menu</h4>
-                <a href="javascript:history.back()"><i class="fas fa-arrow-left"></i></a> 
-            </nav>
-            <div class="profile">
-                <img src="./img/rata.png" alt="">
-                <h4>Juanito Alcachofa<h4>
-                <p>Profesor</p>
+    <header>
+        <nav>
+            <h4>Menu</h4>
+            <a href="javascript:history.back()"><i class="fas fa-arrow-left"></i></a> 
+        </nav>
+        <div class="profile">
+            <img src="./img/rata.png" alt="">
+            <h4 class="name">Usuario<h4>
+            <p class="ocupation">Profesion</p>
+        </div>
+        <div class="statistics">
+            <div class="statistics--to-win">
+                <h4>$ <span class="missing">0</span></h4>
+                <p>Ingresos Pasivos Faltantes</p>
             </div>
-            <div class="statistics">
-                <div class="statistics--to-win">
-                    <h4>$ <span class="missing">0</span></h4>
-                    <p>Ingresos Pasivos Faltantes</p>
-                </div>
-                <div class="statistics--advanced">
-                    <h4><span class="ratio">0</span> %</h4>
-                    <p>Ingresos Pasivos sobre Gatos</p>
-                </div>
+            <div class="statistics--advanced">
+                <h4><span class="ratio">0</span> %</h4>
+                <p>Ingresos Pasivos sobre Gatos</p>
             </div>
-        </header>
-        <main>
-            <section>
-                <ul class="ul-nav">
-                    <li><a href="./index.html"><i class="fas fa-wallet fa-lg"></i> Billetera</a></li>
-                    <li><a href="./estado.html"><i class="fas fa-file-invoice-dollar fa-lg"></i> Estado de Resultados</a></li>
-                    <li><a href="./balance.html"><i class="fas fa-balance-scale fa-lg"></i> Balance General</a></li>
-                    <li><a href="./datos.html"><i class="fas fa-id-badge fa-lg"></i> Datos Financieros</a></li>
-                    <li><a href="./herramientas.html"><i class="fas fa-toolbox fa-lg"></i> Herramientas</a></li>
-                </ul>   
-            </section>
-        </main>
-    </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <ul class="ul-nav">
+                <li><a href="./index.html"><i class="fas fa-wallet fa-lg"></i> Billetera</a></li>
+                <li><a href="./estado.html"><i class="fas fa-file-invoice-dollar fa-lg"></i> Estado de Resultados</a></li>
+                <li><a href="./balance.html"><i class="fas fa-balance-scale fa-lg"></i> Balance General</a></li>
+                <li><a href="./datos.html"><i class="fas fa-id-badge fa-lg"></i> Datos Financieros</a></li>
+                <li><a href="./herramientas.html"><i class="fas fa-toolbox fa-lg"></i> Herramientas</a></li>
+            </ul>   
+        </section>
+    </main>
     <footer>
         <div class="footbar">
             <p>Copyright ©2023 Diego's Applications Inc.</p>
             <div class="version">
-                <p class="v-menu">Alpha v1.0.0</p>
+                <p class="v-menu">Alpha v1.0.1</p>
             </div>
         </div>
     </footer>
@@ -83,6 +81,9 @@
 
             $('.missing').text(expenses - incomes);
             $('.ratio').text(Math.trunc((incomes/expenses) * 100) );
+
+            $('.name').text(user.nombre);
+            $('.ocupation').text(user.profesion);
         }
     </script>
 </body>
