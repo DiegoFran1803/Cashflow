@@ -1,0 +1,23 @@
+.financial-data--title {
+    text-align: center;
+    color:  var(--primary);
+}
+
+.financial-data p {
+    font-weight: 700;
+}
+
+.financial-data p span{
+    font-weight: 400;
+}
+
+.btn_children-more, .btn_children-fewer {
+    margin: 0 10px;
+    background-color: var(--dark);
+}
+
+.btn_new-game {
+    width: 100%;
+    margin-top: 10px;
+    background-color: var(--primary);
+}

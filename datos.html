@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cashflow</title>
+    
+        <script src="https://kit.fontawesome.com/f3dac0d917.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/datos.css">
+
+    </head>
+    
+    <body>
+    
+        <header>
+            <img class="logo" src="./img/logo.png">
+    
+            <a href="./menu.html"><i class="fas fa-bars fa-lg btn-menu"></i></a>
+    
+            <nav style="display: none;">
+                <ul class="nav--options">
+                    <li class="nav--option"><a href="./index.html"><i class="fas fa-wallet fa-lg"></i> BilleteraBilletera</a></li>
+                    <li class="nav--option"><a href="./estado.html"><i class="fas fa-file-invoice-dollar fa-lg"></i> Estado de Resultados</a></li>
+                    <li class="nav--option"><a href="./balance.html"><i class="fas fa-balance-scale fa-lg"></i> Balance General</a></li>
+                    <li class="nav--option"><a href="./datos.html"><i class="fas fa-id-badge fa-lg"></i> Datos Financieros</a></li>
+                    <li class="nav--option"><a href="./herramientas.html"><i class="fas fa-toolbox fa-lg"></i> Herramientas</a></li>
+                </ul>
+            </nav>
+        </header>
+
+    <main>
+        <h2 class="financial-data--title">Datos Financieros</h2>
+        <section class="financial-data">
+            <p>Nombre: <span class="name"></span></p>
+            <p>Profesion: <span class="profession"></span></p>
+            <p>Salario: <span>$ </span><span class="salary">0</span></p>
+            <p>Numero de Hijos: <button class="btn_children-more">+</button><span class="children">0</span><button class="btn_children-fewer">-</button></p>
+            <p>Gasto Niños: <span>$ </span><span class="children-expenses">0</span></p>
+            <button class="btn_new-game">Nueva Partida</button>
+        </section>
+    </main>
+
+    <footer>
+        <section class="footer--section">
+            <div class="footer--section-article">
+                <h3>Sobre la App</h3>
+                <p>Esta app fue diseñada con el proposito de hacer mas rapido y dinamico el juego Cashflow, reemplazando
+                    las hojas de calculo y el dinero en efectivo.</p>
+                <a href="#">Consultar las reglas del juego</a>
+            </div>
+
+            <div class="footer--section-article">
+                <h3>Agradecimientos</h3>
+                <p>En nombre de <b>Diego's Applications Inc.</b> queremos agradecer a todas las personas que de alguna
+                    forma
+                    u otra se involucraron en nuestro proyecto. Su tiempo, motivación e ideas han hecho que el resultado
+                    sea
+                    mucho mejor de lo que podríamos haber logrado sin ellas.</p>
+            </div>
+
+            <div class="footer--section-article">
+                <h3>Menu de Navegacion</h3>
+                <ul class="footer--nav_options">
+                    <li><a href="./index.html">Billetera</a></li>
+                    <li><a href="./estado.html">Estado de Resultados</a></li>
+                    <li><a href="./balance.html">Balance General</a></li>
+                    <li><a href="./datos.html">Datos Financieros</a></li>
+                    <li><a href="./herramientas.html">Herramientas</a></li>
+                </ul> 
+            </div>
+        </section>
+        <div class="footbar">
+            <p>Copyright ©2023 Diego's Applications Inc.</p>
+            <div class="version">
+                <p>Alpha v1.0.0</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal--container modal--container_new-game">
+        <div class="modal">
+            <div class="header-modal">
+                <h2>Nueva Partida</h2>
+            </div>
+            <div class="body-modal">
+                <label for="username">Nombre: </label>
+                <input type="text" name="username" id="username">
+                <label for="professions">Profesion</label>
+                <select id="professions" name="professions">
+                    <option value="-1" selected="selected"> </option>
+                    <option value="0">Abogado</option>
+                    <option value="1">Camionero</option>
+                    <option value="2">Conserje</option>
+                    <option value="3">Enfermera</option>
+                    <option value="4">Gerente</option>
+                    <option value="5">Ingeniero</option>
+                    <option value="6">Mecanico</option>
+                    <option value="7">Medico</option>
+                    <option value="8">Piloto</option>
+                    <option value="9">Policia</option>
+                    <option value="10">Profesor</option>
+                    <option value="11">Secretaria</option>
+                </select>
+            </div>
+            <div class="footer-modal">
+                <button class="btn-cancel">Cancelar</button>
+                <button class="btn-accept btn-start">Iniciar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal--container modal--container_alert">
+        <div class="modal">
+            <div class="header-modal-alert">
+                <h2 class="title-alert">Completado</h2>
+            </div>
+            <div class="body-modal">
+                <div class="icon-alert-container"></div>
+                <p class="msg-alert"></p>
+            </div>
+            <div class="footer-modal">
+                <button class="btn-accept-alert" style="margin: auto;">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="./js/datos.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/nueva_partida.js"></script>
+</body>
+</html>

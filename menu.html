@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cashflow</title>
+    
+        <script src="https://kit.fontawesome.com/f3dac0d917.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/menu.css">
+    </head>
+<body>
+    <div class="body">
+        <header>
+            <nav>
+                <h4>Menu</h4>
+                <a href="javascript:history.back()"><i class="fas fa-arrow-left"></i></a> 
+            </nav>
+            <div class="profile">
+                <img src="./img/rata.png" alt="">
+                <h4>Juanito Alcachofa<h4>
+                <p>Profesor</p>
+            </div>
+            <div class="statistics">
+                <div class="statistics--to-win">
+                    <h4>$ <span class="missing">0</span></h4>
+                    <p>Ingresos Pasivos Faltantes</p>
+                </div>
+                <div class="statistics--advanced">
+                    <h4><span class="ratio">0</span> %</h4>
+                    <p>Ingresos Pasivos sobre Gatos</p>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section>
+                <ul class="ul-nav">
+                    <li><a href="./index.html"><i class="fas fa-wallet fa-lg"></i> Billetera</a></li>
+                    <li><a href="./estado.html"><i class="fas fa-file-invoice-dollar fa-lg"></i> Estado de Resultados</a></li>
+                    <li><a href="./balance.html"><i class="fas fa-balance-scale fa-lg"></i> Balance General</a></li>
+                    <li><a href="./datos.html"><i class="fas fa-id-badge fa-lg"></i> Datos Financieros</a></li>
+                    <li><a href="./herramientas.html"><i class="fas fa-toolbox fa-lg"></i> Herramientas</a></li>
+                </ul>   
+            </section>
+        </main>
+    </div>
+    <footer>
+        <div class="footbar">
+            <p>Copyright ©2023 Diego's Applications Inc.</p>
+            <div class="version">
+                <p class="v-menu">Alpha v1.0.0</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        if(localStorage['user']) {
+            let user = JSON.parse(localStorage.getItem('user'));
+            let incomes = 0;
+            for (let key in user.ingresos) {
+                incomes += parseInt(user.ingresos[key].pasivo);
+            }
+
+            let loans = 0;
+            if(user.gastos.prestamos && user.gastos.prestamos.lenght != 0) {
+                
+                for (let key in user.gastos.prestamos) {
+                    if(key != 0) loans += parseInt(user.gastos.prestamos[key]);
+                }
+            }
+
+            let expenses = 0;
+            for (let key in user.gastos) {
+                expenses += parseInt(user.gastos[key]);
+            }
+
+            expenses += loans;
+
+            $('.missing').text(expenses - incomes);
+            $('.ratio').text(Math.trunc((incomes/expenses) * 100) );
+        }
+    </script>
+</body>
+</html>

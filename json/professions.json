@@ -1,0 +1,277 @@
+[
+    {
+        "id": 0,
+        "profesion": "Abogado",
+        "salario": 7500,
+        "gastos": {
+            "impuestos": 1850,
+            "hipoteca": 1100,
+            "colegio": 390,
+            "automovil": 220,
+            "tarjeta": 180,
+            "menores": 50,
+            "otros": 1630
+        },
+        "hijo": 360,
+        "ahorros": 400,
+        "pasivos": {
+            "hipoteca":115000,
+            "colegio": 78000,
+            "automovil": 11000,
+            "tarjeta": 80000,
+            "menores": 5000
+        }
+    },    {
+        "id": 1,
+        "profesion": "Camionero",
+        "salario": 2500,
+        "gastos": {
+            "impuestos": 460,
+            "hipoteca": 400,
+            "colegio": 0,
+            "automovil": 80,
+            "tarjeta": 60,
+            "menores": 50,
+            "otros": 760
+        },
+        "hijo": 120,
+        "ahorros": 750,
+        "pasivos": {
+            "hipoteca": 38000,
+            "colegio": 0,
+            "automovil": 4000,
+            "tarjeta": 6000,
+            "menores": 5000
+        }
+    },
+    {
+        "id": 2,
+        "profesion": "Conserje",
+        "salario": 1600,
+        "gastos": {
+            "impuestos": 280,
+            "hipoteca": 200,
+            "colegio": 0,
+            "automovil": 60,
+            "tarjeta": 60,
+            "menores": 50,
+            "otros": 300
+        },
+        "hijo": 70,
+        "ahorros": 560,
+        "pasivos": {
+            "hipoteca": 20000,
+            "colegio": 0,
+            "automovil": 4000,
+            "tarjeta": 6000,
+            "menores": 5000
+        }
+    },
+    {
+        "id": 3,
+        "profesion": "Enfermera",
+        "salario": 3100,
+        "gastos": {
+            "impuestos": 600,
+            "hipoteca": 400,
+            "colegio": 30,
+            "automovil": 100,
+            "tarjeta": 90,
+            "menores": 50,
+            "otros": 710
+        },
+        "hijo": 150,
+        "ahorros": 480,
+        "pasivos": {
+            "hipoteca": 47000,
+            "colegio": 6000,
+            "automovil": 5000,
+            "tarjeta": 9000,
+            "menores": 5000
+        }
+    },
+    {
+        "id": 4,
+        "profesion": "Gerente",
+        "salario": 4600,
+        "gastos": {
+            "impuestos": 910,
+            "hipoteca": 700,
+            "colegio": 60,
+            "automovil": 120,
+            "tarjeta": 90,
+            "menores": 50,
+            "otros": 1000
+        },
+        "hijo": 220,
+        "ahorros": 400,
+        "pasivos": {
+            "hipoteca": 75000,
+            "colegio": 12000,
+            "automovil": 6000,
+            "tarjeta": 9000,
+            "menores": 5000
+        }
+    },
+    {
+        "id": 5,
+        "profesion": "Ingeniero",
+        "salario": 4900,
+        "gastos": {
+            "impuestos": 1050,
+            "hipoteca": 700,
+            "colegio": 60,
+            "automovil": 140,
+            "tarjeta": 120,
+            "menores": 50,
+            "otros": 1090
+        },
+        "hijo": 230,
+        "ahorros": 400,
+        "pasivos": {
+            "hipoteca": 75000,
+            "colegio": 12000,
+            "automovil": 7000,
+            "tarjeta": 12000,
+            "menores": 5000
+        }
+    },
+    {
+        "id": 6,
+        "profesion": "Mecanico",
+        "salario": 2000,
+        "gastos": {
+            "impuestos": 360,
+            "hipoteca": 300,
+            "colegio": 0,
+            "automovil": 60,
+            "tarjeta": 60,
+            "menores": 50,
+            "otros": 450
+        },
+        "hijo": 100,
+        "ahorros": 670,
+        "pasivos": {
+            "hipoteca": 31000,
+            "colegio": 0,
+            "automovil": 3000,
+            "tarjeta": 6000,
+            "menores": 5000
+        }
+    },
+    {
+        "id": 7,
+        "profesion": "Medico",
+        "salario": 13200,
+        "gastos": {
+            "impuestos": 3420,
+            "hipoteca": 1900,
+            "colegio": 750,
+            "automovil": 380,
+            "tarjeta": 270,
+            "menores": 50,
+            "otros": 2880
+        },
+        "hijo": 630,
+        "ahorros": 400,
+        "pasivos": {
+            "hipoteca": 202000,
+            "colegio": 150000,
+            "automovil": 19000,
+            "tarjeta": 27000,
+            "menores": 5000
+        }
+    },
+    {
+        "id": 8,
+        "profesion": "Piloto",
+        "salario": 9500,
+        "gastos": {
+            "impuestos": 2350,
+            "hipoteca": 1130,
+            "colegio": 0,
+            "automovil": 300,
+            "tarjeta": 660,
+            "menores": 50,
+            "otros": 2210
+        },
+        "hijo": 450,
+        "ahorros": 400,
+        "pasivos": {
+            "hipoteca": 143000,
+            "colegio": 0,
+            "automovil": 15000,
+            "tarjeta": 66000,
+            "menores": 5000
+        }
+    },
+    {
+        "id": 9,
+        "profesion": "Policia",
+        "salario": 3000,
+        "gastos": {
+            "impuestos": 580,
+            "hipoteca": 400,
+            "colegio": 0,
+            "automovil": 100,
+            "tarjeta": 60,
+            "menores": 50,
+            "otros": 690
+        },
+        "hijo": 140,
+        "ahorros": 520,
+        "pasivos": {
+            "hipoteca": 46000,
+            "colegio": 0,
+            "automovil": 5000,
+            "tarjeta": 6000,
+            "menores": 5000
+        }
+    },
+    {
+        "id": 10,
+        "profesion": "Profesor",
+        "salario": 3300,
+        "gastos": {
+            "impuestos": 630,
+            "hipoteca": 500,
+            "colegio": 60,
+            "automovil":100 ,
+            "tarjeta": 90,
+            "menores": 50,
+            "otros": 760
+        },
+        "hijo": 160,
+        "ahorros": 400,
+        "pasivos": {
+            "hipoteca": 50000,
+            "colegio": 12000,
+            "automovil": 5000,
+            "tarjeta": 9000,
+            "menores": 5000
+        }
+    },
+    {
+        "id": 11,
+        "profesion": "Secretaria",
+        "salario": 2500,
+        "gastos": {
+            "impuestos": 460,
+            "hipoteca": 400,
+            "colegio": 0,
+            "automovil": 80,
+            "tarjeta": 60,
+            "menores": 50,
+            "otros": 570
+        },
+        "hijo": 120,
+        "ahorros": 710,
+        "pasivos": {
+            "hipoteca": 38000,
+            "colegio": 0,
+            "automovil": 4000,
+            "tarjeta": 6000,
+            "menores": 5000
+        }
+    }
+] 

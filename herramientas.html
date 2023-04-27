@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashflow</title>
+
+    <script src="https://kit.fontawesome.com/f3dac0d917.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/herramientas.css">
+</head>
+
+<body>
+
+    <header>
+        <img class="logo" src="./img/logo.png">
+
+        <a href="./menu.html"><i class="fas fa-bars fa-lg btn-menu"></i></a>
+
+        <nav style="display: none;">
+            <ul class="nav--options">
+                <li class="nav--option"><a href="./index.html"><i class="fas fa-wallet fa-lg"></i> BilleteraBilletera</a></li>
+                <li class="nav--option"><a href="./estado.html"><i class="fas fa-file-invoice-dollar fa-lg"></i> Estado de Resultados</a></li>
+                <li class="nav--option"><a href="./balance.html"><i class="fas fa-balance-scale fa-lg"></i> Balance General</a></li>
+                <li class="nav--option"><a href="./datos.html"><i class="fas fa-id-badge fa-lg"></i> Datos Financieros</a></li>
+                <li class="nav--option"><a href="./herramientas.html"><i class="fas fa-toolbox fa-lg"></i> Herramientas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="tools--title">Herramientas</h2>
+        <section class="roulette">
+            <h3>Ruleta de Profesiones</h3>
+            <div class="roulette--container">
+                <div class="box-roulette" style="text-align: center;">
+                    <canvas id="canvas" width="320" height="320"></canvas>
+                    <div class="roulette" id="roulette"></div>
+                </div>
+            </div>
+            <button class="btn_spin" id='spin' value="spin" >Girar</button>
+        </section>
+
+        <hr>
+
+        <section class="dices">
+            <h3>Dados</h3>
+            <div class="dices--side">
+                <p class="dices-number">1</p>
+            </div>
+            <button class="btn_throw">Lanzar</button>
+            <button class="btn_double-throw">Lanzar Doble</button>
+        </section>
+
+        <hr>
+
+        <section class="calculator">
+            <h3>Calculadora</h3>
+            <div id = "Principal">  
+                <div id= "Calculadora">         
+                   <input id="Pantalla" type="textbox" class="textbox">
+                  <div id= "Teclado" class="buttons">
+                    <button class="button" value="AC">AC</button>
+                    <button class="button" value="CE">CE</button>
+                    <button class="button" value="%">%</button>
+                    <button class="button" value="/">/</button><br>
+                    <button class="button" value="7">7</button>
+                    <button class="button" value="8">8</button>
+                    <button class="button" value="9">9</button>
+                    <button class="button" value="*">*</button><br>
+                    <button class="button" value="4">4</button>
+                    <button class="button" value="5">5</button>
+                    <button class="button" value="6">6</button>
+                    <button class="button" value="-">-</button><br>
+                    <button class="button" value="1">1</button>
+                    <button class="button" value="2">2</button>
+                    <button class="button" value="3">3</button>
+                    <button class="button" value="+">+</button><br>
+                    <button class="button" value=".">.</button>
+                    <button class="button" value="0">0</button>
+                    <button class="button" value="Ans">Ans</button>
+                    <button class="button" value="=">=</button>
+                  </div>
+                </div>
+              </div>
+        </section>
+    </main>
+
+    <footer>
+        <section class="footer--section">
+            <div class="footer--section-article">
+                <h3>Sobre la App</h3>
+                <p>Esta app fue diseñada con el proposito de hacer mas rapido y dinamico el juego Cashflow, reemplazando
+                    las hojas de calculo y el dinero en efectivo.</p>
+                <a href="#">Consultar las reglas del juego</a>
+            </div>
+
+            <div class="footer--section-article">
+                <h3>Agradecimientos</h3>
+                <p>En nombre de <b>Diego's Applications Inc.</b> queremos agradecer a todas las personas que de alguna
+                    forma
+                    u otra se involucraron en nuestro proyecto. Su tiempo, motivación e ideas han hecho que el resultado
+                    sea
+                    mucho mejor de lo que podríamos haber logrado sin ellas.</p>
+            </div>
+
+            <div class="footer--section-article">
+                <h3>Menu de Navegacion</h3>
+                <ul class="footer--nav_options">
+                    <li><a href="./index.html">Billetera</a></li>
+                    <li><a href="./estado.html">Estado de Resultados</a></li>
+                    <li><a href="./balance.html">Balance General</a></li>
+                    <li><a href="./datos.html">Datos Financieros</a></li>
+                    <li><a href="./herramientas.html">Herramientas</a></li>
+                </ul> 
+            </div>
+        </section>
+        <div class="footbar">
+            <p>Copyright ©2023 Diego's Applications Inc.</p>
+            <div class="version">
+                <p>Alpha v1.0.0</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="./js/roulette_canvas.js"></script>
+    <script src="./js/dado.js"></script>
+    <script src="./js/calculadora.js"></script>
+</body>
+
+</html>

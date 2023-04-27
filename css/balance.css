@@ -1,0 +1,18 @@
+.balance-sheet--title {
+    text-align: center;
+    color:  var(--primary);
+}
+
+.btn-add-assets, .btn-add-passives {
+    float: left;
+}
+
+table .td_icon {
+    min-width: 60px;
+}
+
+.btn-savings, .btn-admin-shares, .btn-admin-propety, .btn-pay, .btn-pay-loan, .space-mortgage {
+    min-width: 60px;
+    text-align: center;
+    color: var(--dark);
+}

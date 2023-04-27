@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cashflow</title>
+    
+        <script src="https://kit.fontawesome.com/f3dac0d917.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/balance.css">
+    </head>
+    
+    <body>
+    
+        <header>
+            <img class="logo" src="./img/logo.png">
+    
+            <a href="./menu.html"><i class="fas fa-bars fa-lg btn-menu"></i></a>
+    
+            <nav style="display: none;">
+                <ul class="nav--options">
+                    <li class="nav--option"><a href="./index.html"><i class="fas fa-wallet fa-lg"></i> BilleteraBilletera</a></li>
+                    <li class="nav--option"><a href="./estado.html"><i class="fas fa-hand-holding-usd fa-lg"></i> Estado de Resultados</a></li>
+                    <li class="nav--option"><a href="./balance.html"><i class="fas fa-balance-scale fa-lg"></i> Balance General</a></li>
+                    <li class="nav--option"><a href="./datos.html"><i class="fas fa-id-badge fa-lg"></i> Datos Financieros</a></li>
+                    <li class="nav--option"><a href="./herramientas.html"><i class="fas fa-toolbox fa-lg"></i> Herramientas</a></li>
+                </ul>
+            </nav>
+        </header>
+
+    <main>
+        <h2 class="balance-sheet--title">Balance General</h2>
+        <section class="balance-sheet__assets">
+            <div class="overflow-x">
+                <table class="balance-sheet--table__assets table-overflow-x">
+                    <tr class="thead-info">
+                        <td colspan="4"><button class="btn-add-assets"><i class="fas fa-plus-square fa-lg"></i></button> Activos</td>
+                    </tr>
+                    <tr class="thead-secondary">
+                        <td class="td_icon">Vender</td>
+                        <td>Description</td>
+                        <td>Pago Inicial o Cant.</td>
+                        <td>$</td>
+                    </tr>
+                    <tr>
+                        <td class="td_icon"><button class="btn-savings"><i class="fas fa-user-cog fa-lg"></i></button></td>
+                        <td>Ahorros</td>
+                        <td> </td>
+                        <td>$ <span class="savings">0</span></td>
+                    </tr>
+                    <table class="table-shares"></table>
+                    <table class="table-property"></table>
+                </table>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="balance-sheet__passives">
+            <div class="overflow-x">
+                <table class="balance-sheet--table__passives table-overflow-x">
+                    <tr class="thead-warning">
+                        <td colspan="3"><button class="btn-add-passives"><i class="fas fa-plus-square fa-lg"></i></button>Pasivos</td>
+                    </tr>
+                    <tr class="thead-secondary">
+                        <td class="td_icon">Pagar</td>
+                        <td>Description</td>
+                        <td>$</td>
+                    </tr>
+                    <tr>
+                        <td class="td_icon"><button class="btn-pay"><i class="fas fa-hand-holding-usd fa-lg"></i></button></td>
+                        <td>Hipoteca de Casa</td>
+                        <td>$ <span class="mortgage">0</span></td>
+                    </tr>
+                    <tr>
+                        <td class="td_icon"><button class="btn-pay"><i class="fas fa-hand-holding-usd fa-lg"></i></button></td>
+                        <td>Deudas Colegio</td>
+                        <td>$ <span class="school">0</span></td>
+                    </tr>
+                    <tr>
+                        <td class="td_icon"><button class="btn-pay"><i class="fas fa-hand-holding-usd fa-lg"></i></button></td>
+                        <td>Prestamo Automovil</td>
+                        <td>$ <span class="car">0</span></td>
+                    </tr>
+                    <tr>
+                        <td class="td_icon"><button class="btn-pay"><i class="fas fa-hand-holding-usd fa-lg"></i></button></td>
+                        <td>Tarjetas de Credito</td>
+                        <td>$ <span class="credit-car">0</span></td>
+                    </tr>
+                    <tr>
+                        <td class="td_icon"><button class="btn-pay"><i class="fas fa-hand-holding-usd fa-lg"></i></button></td>
+                        <td>Deuda de Pagos Menores</td>
+                        <td>$ <span class="minors">0</span></td>
+                    </tr>
+                    <table class="table-mortgage"></table>
+                    <table class="table-loan"></table>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <section class="footer--section">
+            <div class="footer--section-article">
+                <h3>Sobre la App</h3>
+                <p>Esta app fue diseñada con el proposito de hacer mas rapido y dinamico el juego Cashflow, reemplazando
+                    las hojas de calculo y el dinero en efectivo.</p>
+                <a href="#">Consultar las reglas del juego</a>
+            </div>
+
+            <div class="footer--section-article">
+                <h3>Agradecimientos</h3>
+                <p>En nombre de <b>Diego's Applications Inc.</b> queremos agradecer a todas las personas que de alguna
+                    forma
+                    u otra se involucraron en nuestro proyecto. Su tiempo, motivación e ideas han hecho que el resultado
+                    sea
+                    mucho mejor de lo que podríamos haber logrado sin ellas.</p>
+            </div>
+
+            <div class="footer--section-article">
+                <h3>Menu de Navegacion</h3>
+                <ul class="footer--nav_options">
+                    <li><a href="./index.html">Billetera</a></li>
+                    <li><a href="./estado.html">Estado de Resultados</a></li>
+                    <li><a href="./balance.html">Balance General</a></li>
+                    <li><a href="./datos.html">Datos Financieros</a></li>
+                    <li><a href="./herramientas.html">Herramientas</a></li>
+                </ul> 
+            </div>
+        </section>
+        <div class="footbar">
+            <p>Copyright ©2023 Diego's Applications Inc.</p>
+            <div class="version">
+                <p>Alpha v1.0.0</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal--container modal--container_buy">
+        <div class="modal">
+            <div class="header-modal">
+                <h2>Comprar</h2>
+            </div>
+            <div class="body-modal">
+                <div class="radio-buttons">
+                    <div class="radio-button">
+                        <input type="radio" id="shares" name="buy" value="shares" checked>
+                        <label for="shares">Acc. / Div.</label>
+                    </div>
+                    
+                    <div class="radio-button">
+                        <input type="radio" id="property" name="buy" value="property">
+                        <label for="property">Propiedades</label>
+                    </div>
+                </div>
+
+                <label for="description">Descripcion: </label>
+                <input type="text" name="description" id="description">
+
+                <div class="buy-shares modal-inputs">
+                    <label for="quantity">Cantidad: </label>
+                    <input type="text" name="quantity" id="quantity">
+    
+                    <label for="cost">Costo / Und: </label>
+                    <input type="text" name="cost" id="cost">
+                </div>
+
+                <div class="buy-property modal-inputs" style="display: none;">
+                    <label for="initial-payment">Pago Inicial: </label>
+                    <input type="text" name="initial-payment" id="initial-payment">
+    
+                    <label for="mortgage">Hipoteca: </label>
+                    <input type="text" name="mortgage" id="mortgage">
+    
+                    <label for="passives-incomes">Ingresos Pasivos: </label>
+                    <input type="text" name="passives-incomes" id="passives-incomes">
+                </div>
+            </div>
+            <div class="footer-modal">
+                <button class="btn-cancel">Cancelar</button>
+                <button class="btn-accept buy-shares btn-buy-shares">Comprar</button>
+                <button class="btn-accept buy-property btn-buy-property" style="display: none;">Comprar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal--container modal--container_loan">
+        <div class="modal">
+            <div class="header-modal">
+                <h2>Prestamo</h2>
+            </div>
+            <div class="body-modal">
+                <label for="amount">Monto: </label>
+                <input type="text" name="amount" id="amount">
+                <p class="text-modal-sm">La tasa de interes es el 10% del monto</p>
+            </div>
+            <div class="footer-modal">
+                <button class="btn-cancel">Cancelar</button>
+                <button class="btn-accept btn-loan">Prestarse</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal--container modal--container_savings">
+        <div class="modal">
+            <div class="header-modal">
+                <h2>Cuenta de Ahorros</h2>
+            </div>
+            <div class="body-modal">
+                <div class="savings-container">
+                    <h6>Saldo disponible:</h6>
+                    <p>$ <span class="savings">0</span></p>
+                </div>
+
+                <div class="radio-buttons">
+                    <div class="radio-button">
+                        <input type="radio" id="withdrawal" name="saving" value="withdrawal" checked>
+                        <label for="withdrawal">Retiro</label>
+                    </div>
+                    
+                    <div class="radio-button">
+                        <input type="radio" id="deposit" name="saving" value="deposit">
+                        <label for="deposit">Deposito</label>
+                    </div>
+                </div>
+
+                <label for="banking-operation">Monto: </label>
+                <input type="text" name="banking-operation" id="banking-operation">
+            </div>
+            <div class="footer-modal">
+                <button class="btn-cancel">Cancelar</button>
+                <button class="btn-accept btn-withdrawal">Retirar</button>
+                <button class="btn-accept btn-deposit" style="display: none;">Depositar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal--container modal--container_pay">
+        <div class="modal">
+            <div class="header-modal">
+                <h2>Pagar</h2>
+            </div>
+            <div class="body-modal">
+                <p class="text-modal">¿Desea par el total de esta deuda?</p>
+            </div>
+            <div class="footer-modal">
+                <button class="btn-cancel">Cancelar</button>
+                <button class="btn-accept btn-payment">Pagar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal--container modal--container_admin-shares">
+        <div class="modal">
+            <div class="header-modal sell-shares-flex">
+                <h2>Vender</h2>
+            </div>
+            <div class="header-modal edit-shares-flex" style="display: none;">
+                <h2>Editar</h2>
+            </div>
+            <div class="body-modal">
+                <div class="radio-buttons">
+                    <div class="radio-button">
+                        <input type="radio" id="sell-shares" name="admin-shares" value="sell-shares" checked>
+                        <label for="sell-shares">Vender</label>
+                    </div>
+                    
+                    <div class="radio-button">
+                        <input type="radio" id="edit-shares" name="admin-shares" value="edit-shares">
+                        <label for="edit-shares">Editar</label>
+                    </div>
+                </div>
+
+                <div class="sell-shares modal-inputs">
+                    <label for="cost-sell">Costo / Und: </label>
+                    <input type="text" name="cost-sell" id="cost-sell">
+                </div>
+
+                <div class="edit-shares modal-inputs" style="display: none;">
+                    <label for="description-shares">Descripcion: </label>
+                    <input type="text" name="description-shares" id="description-shares">
+
+                    <label for="quantity-shares">Cantidad: </label>
+                    <input type="text" name="quantity-shares" id="quantity-shares">
+                </div>
+
+            </div>
+            <div class="footer-modal">
+                <button class="btn-cancel">Cancelar</button>
+                <button class="btn-accept sell-shares btn-sell-shares">Vender</button>
+                <button class="btn-accept edit-shares btn-edit-shares" style="display: none;">Editar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal--container modal--container_admin-propety">
+        <div class="modal">
+            <div class="header-modal sell-propety-flex">
+                <h2>Vender</h2>
+            </div>
+            <div class="header-modal edit-propety-flex" style="display: none;">
+                <h2>Editar</h2>
+            </div>
+            <div class="body-modal">
+                <div class="radio-buttons">
+                    <div class="radio-button">
+                        <input type="radio" id="sell-propety" name="admin-propety" value="sell-propety" checked>
+                        <label for="sell-propety">Vender</label>
+                    </div>
+                    
+                    <div class="radio-button">
+                        <input type="radio" id="edit-propety" name="admin-propety" value="edit-propety">
+                        <label for="edit-propety">Editar</label>
+                    </div>
+                </div>
+
+                <div class="sell-propety modal-inputs">
+                    <label for="sell-price">Precio de Venta: </label>
+                    <input type="text" name="sell-price" id="sell-price">
+                </div>
+
+                <div class="edit-propety modal-inputs" style="display: none;">
+                    <label for="description-propety">Descripcion: </label>
+                    <input type="text" name="description-propety" id="description-propety">
+    
+                    <label for="passives-incomes-propety">Ingresos Pasivos: </label>
+                    <input type="text" name="passives-incomes-propety" id="passives-incomes-propety">
+                </div>
+
+            </div>
+            <div class="footer-modal">
+                <button class="btn-cancel">Cancelar</button>
+                <button class="btn-accept sell-propety btn-sell-propety">Vender</button>
+                <button class="btn-accept edit-propety btn-edit-propety" style="display: none;">Editar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal--container modal--container_alert">
+        <div class="modal">
+            <div class="header-modal-alert">
+                <h2 class="title-alert">Completado</h2>
+            </div>
+            <div class="body-modal">
+                <div class="icon-alert-container"></div>
+                <p class="msg-alert"></p>
+            </div>
+            <div class="footer-modal">
+                <button class="btn-accept-alert" style="margin: auto;">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/balance.js"></script>
+    <script src="./js/cuenta.js"></script>
+</body>
+</html>
