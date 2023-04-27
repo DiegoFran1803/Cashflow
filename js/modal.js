@@ -13,6 +13,10 @@ function closeModal() {
 function openModal(x) {
     x.css('display', 'flex');
     $('body').css('overflow', 'hidden');
+
+    $('body, html').animate({
+        scrollTop: '0px'
+    }, 300);
 }
 
 function openModalSuccess(lvl, title, msg) {
@@ -47,6 +51,10 @@ function openModalSuccess(lvl, title, msg) {
 
     $('.modal--container_alert').css('display', 'flex');
     $('body').css('overflow', 'hidden');
+
+    $('body, html').animate({
+        scrollTop: '0px'
+    }, 300);
 }
 
 //Abrir Modal

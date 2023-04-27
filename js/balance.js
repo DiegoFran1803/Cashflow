@@ -146,7 +146,7 @@ function extensionModal() {
                     if(parseInt(user.pasivos[toPay[i]]) <= parseInt(cash)) {
                         cash = parseInt(cash) - parseInt(user.pasivos[toPay[i]]);
                         user.pasivos[toPay[i]] = 0;
-                        user.gastos[toPay[i+1]] = 0;
+                        user.gastos[toPay[i]] = 0; 
 
                         localStorage.setItem('user', JSON.stringify(user));
                         localStorage.setItem('cash', cash);
@@ -166,9 +166,9 @@ function extensionModal() {
 
     $('.btn-pay-loan').each(function(i) {
         $(this).click(function () {
-            openModal($('.modal--container_pay'));
+            openModal($('.modal--container_pay-loan'));
 
-            $('.btn-payment').click(function() {
+            $('.btn-payment-loan').click(function() {
                 if(localStorage['user'] && localStorage['cash']){
                     let user = JSON.parse(localStorage['user']);
                     let cash = localStorage['cash'];
