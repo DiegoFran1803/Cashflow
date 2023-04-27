@@ -96,7 +96,7 @@ h6 {
     font-weight: 500;
 }
 
-input[type="text"] {
+input[type="text"], input[type="number"] {
     height: 28px;
     padding: 0 10px;
     font-family: 'Josefin Sans', sans-serif;
@@ -307,7 +307,7 @@ footer {
     padding: 15px 20px 0 20px;
 }
 
-.body-modal input[type="text"], .body-modal select {
+.body-modal input[type="text"], .body-modal input[type="number"], .body-modal select {
     width: 100%;
     margin-bottom: 15px;
     background-color: var(--gray);
