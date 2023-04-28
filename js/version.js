@@ -1,4 +1,4 @@
-let version = 'Alpha 1.1.0';
+let version = 'Alpha 1.1.1';
 $('.version-code').text(version);
 
 function invertirCadena(cad) {
