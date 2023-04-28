@@ -197,6 +197,7 @@ function extensionModal() {
         });
     });
 
+    numberSpace();
     return null;
 }
 
@@ -251,7 +252,7 @@ function balanceSheet() {
                     <tr class="tr-shares">
                         <td class="td_icon"><button class="btn-admin-shares"><i class="fas fa-user-cog fa-lg"></i></button></td>
                         <td>` + accion.descripcion + `</td>
-                        <td>` + accion.cantidad + ` und.</td>
+                        <td><span>` + accion.cantidad + `</span> und.</td>
                         <td>$ <span class="savings">` + accion.costo + `</span></td>
                     </tr>
                 `;
@@ -279,8 +280,8 @@ function balanceSheet() {
                     <tr class="tr-property">
                         <td class="td_icon"><button class="btn-admin-propety"><i class="fas fa-user-cog fa-lg"></i></button></td>
                         <td>` + propiedad.descripcion + `</td>
-                        <td>$ ` + propiedad.entrada + `</td>
-                        <td>$ <span class="savings">` + (parseInt(user.pasivos.hipotecas[i].hipoteca) + parseInt(propiedad.entrada)) + `</span></td>
+                        <td>$ <span>` + propiedad.entrada + `</span></td>
+                        <td>$ <span>` + (parseInt(user.pasivos.hipotecas[i].hipoteca) + parseInt(propiedad.entrada)) + `</span></td>
                     </tr>
                 `;
                 $('.table-property').append(plantilla);
@@ -307,7 +308,7 @@ function balanceSheet() {
                 <tr class="tr-mortgage">
                     <td class="td_icon"><button class="space-mortgage"></td>
                     <td>` + hipoteca.descripcion + `</td>
-                    <td>$ ` + hipoteca.hipoteca + `</td>
+                    <td>$ <span>` + hipoteca.hipoteca + `</span></td>
                 </tr>
             `;
             $('.table-mortgage').append(plantilla);
@@ -333,7 +334,7 @@ function balanceSheet() {
                     <tr class="tr-loan">
                         <td class="td_icon"><button class="btn-pay-loan"><i class="fas fa-hand-holding-usd fa-lg"></i></button></td>
                         <td>Prestamo ` + (i+1) + `</td>
-                        <td>$ ` + prestamo + `</td>
+                        <td>$ <span>` + prestamo + `</span></td>
                     </tr>
                 `;
             $('.table-loan').append(plantilla);

@@ -7,11 +7,12 @@
     font-weight: 700;
 }
 
-.financial-data p span{
+.financial-data p span, .financial-data p label{
     font-weight: 400;
 }
 
 .btn_children-more, .btn_children-fewer {
+    min-width: 25px;
     margin: 0 10px;
     background-color: var(--dark);
 }

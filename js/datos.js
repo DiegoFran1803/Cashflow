@@ -9,6 +9,8 @@ function financialData() {
         if(user.gastos.hijos) $('.children-expenses').text(user.gastos.hijos);
         else $('.children-expenses').text('0');
     }
+
+    numberSpace();
 }
 
 financialData();

@@ -6,6 +6,7 @@ $('.btn-income').click(function() {
         localStorage.setItem('cash', cash);
         $('.wallet-cash').text(cash.toString());
         $('.card--input').val('');
+        numberSpace();
     }
 });
 
@@ -20,6 +21,7 @@ $('.btn-expense').click(function() {
             $('.wallet-cash').text('0');
         }
         $('.card--input').val('');
+        numberSpace();
     }
 });
 
@@ -32,4 +34,5 @@ $('.btn-cashflow').click(function() {
     let cash = parseInt($('.wallet-cash').text()) + parseInt($('.flow').text());
     localStorage.setItem('cash', cash);
     $('.wallet-cash').text(cash);
+    numberSpace();
 });

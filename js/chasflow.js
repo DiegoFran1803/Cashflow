@@ -42,3 +42,5 @@ if(localStorage['user']) {
     cashflow = totalIncomes - expenses;
     $('.flow').text(cashflow);
 }
+
+numberSpace();

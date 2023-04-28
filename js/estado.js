@@ -99,6 +99,5 @@ if (localStorage['user']) {
         $('.total-expenses').text(expenses);
 
     }
-
-
 }
+numberSpace();
