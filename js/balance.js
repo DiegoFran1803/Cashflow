@@ -1,205 +1,216 @@
 //Extension Modal
+let iShares = 0;
+let iProperty = 0;
+let iPay = 0;
+let iLoan = 0;
+
 function extensionModal() {
     $('.btn-admin-shares').each(function (i) {
         $(this).click(function () {
             openModal($('.modal--container_admin-shares'));
-
-            $('.btn-sell-shares').click(function () {
-                let costSell = $('#cost-sell');
-
-                let costSellVal = inputValidation(costSell);
-
-                if (costSellVal && localStorage['user'] && localStorage['cash']) {
-                    let user = JSON.parse(localStorage['user']);
-                    let cash = localStorage['cash'];
-                    let revenue = parseInt(user.activos.acciones[i].cantidad) * parseInt(costSell.val());
-
-                    user.activos.acciones.splice(i, 1);
-                    cash = parseInt(cash) + revenue;
-
-                    localStorage.setItem('user', JSON.stringify(user));
-                    localStorage.setItem('cash', cash);
-
-                    closeModal();
-                    openModalSuccess(2, 'Completado', '¡Felicidades! Vendiste tus acciones');
-                    balanceSheet();
-                }
-            });
-
-            $('.btn-edit-shares').click(function() {
-                let descriptionShares = $('#description-shares');
-                let quantityShares = $('#quantity-shares');
-
-                let descriptionSharesVal = inputValidation(descriptionShares);
-                let quantitySharesVal = inputValidation(quantityShares);
-
-                if(localStorage['user']){
-                    let user = JSON.parse(localStorage['user']);
-                    if(descriptionSharesVal && quantitySharesVal) {
-                        user.activos.acciones[i].descripcion = descriptionShares.val();
-                        user.activos.acciones[i].cantidad = quantityShares.val();
-                        localStorage.setItem('user', JSON.stringify(user));
-                        closeModal();
-                        openModalSuccess(2, 'Completado', 'Se edito la descripcion y la cantidad de acciones');
-                        balanceSheet();
-                    }else if(descriptionSharesVal) {
-                        user.activos.acciones[i].descripcion = descriptionShares.val();
-                        localStorage.setItem('user', JSON.stringify(user));
-                        closeModal();
-                        openModalSuccess(2, 'Completado', 'Se edito la descripcion');
-                        balanceSheet();
-                    }else if (quantitySharesVal) {
-                        user.activos.acciones[i].cantidad = quantityShares.val();
-                        localStorage.setItem('user', JSON.stringify(user));
-                        closeModal();
-                        openModalSuccess(2, 'Completado', 'Se edito la cantidad de acciones');
-                        balanceSheet();
-                    }
-                }
-            });
+            iShares = i;
         });
     });
 
     $('.btn-admin-propety').each(function (i) {
         $(this).click(function () {
             openModal($('.modal--container_admin-propety'));
-
-            $('.btn-sell-propety').click(function () {
-                let sellPrice = $('#sell-price');
-
-                let sellPriceVal = inputValidation(sellPrice);
-
-                if (sellPriceVal && localStorage['user'] && localStorage['cash']) {
-                    let user = JSON.parse(localStorage['user']);
-                    let cash = localStorage['cash'];
-                    let revenue = parseInt(sellPrice.val()) - parseInt(user.pasivos.hipotecas[i].hipoteca);
-
-                    if (revenue >= 0) {
-                        user.activos.propiedades.splice(i, 1);
-                        user.ingresos.splice(i, 1);
-                        user.pasivos.hipotecas.splice(i, 1);
-                        cash = parseInt(cash) + revenue;
-
-                        localStorage.setItem('user', JSON.stringify(user));
-                        localStorage.setItem('cash', cash);
-
-                        closeModal();
-                        openModalSuccess(2, 'Completado', '¡Felicidades! Vendiste tus acciones');
-                        balanceSheet();
-                    } else {
-                        closeModal();
-                        openModalSuccess(1, 'Advertencia', 'Vender esta propiedad a este precio hara pierdas dinero');
-                        balanceSheet();
-                    }
-
-                }
-            });
-
-            $('.btn-edit-propety').click(function() {
-                let descriptionPropety = $('#description-propety');
-                let passivesIncomesPropety = $('#passives-incomes-propety');
-
-                let descriptionPropetyVal = inputValidation(descriptionPropety);
-                let passivesIncomesPropetyVal = inputValidation(passivesIncomesPropety);
-
-                if(localStorage['user']){
-                    let user = JSON.parse(localStorage['user']);
-                    if(descriptionPropetyVal && passivesIncomesPropetyVal) {
-                        user.activos.propiedades[i].descripcion = descriptionPropety.val();
-                        user.ingresos[i].descripcion = descriptionPropety.val();
-                        user.pasivos.hipotecas[i].descripcion = descriptionPropety.val();
-                        user.ingresos[i].pasivo = passivesIncomesPropety.val();
-                        localStorage.setItem('user', JSON.stringify(user));
-                        closeModal();
-                        openModalSuccess(2, 'Completado', 'Se edito la descripcion y los ingresos pasivos');
-                        balanceSheet();
-                    }else if(descriptionPropetyVal) {
-                        user.activos.propiedades[i].descripcion = descriptionPropety.val();
-                        user.ingresos[i].descripcion = descriptionPropety.val();
-                        user.pasivos.hipotecas[i].descripcion = descriptionPropety.val();
-                        localStorage.setItem('user', JSON.stringify(user));
-                        closeModal();
-                        openModalSuccess(2, 'Completado', 'Se edito la descripcion');
-                        balanceSheet();
-                    }else if (passivesIncomesPropetyVal) {
-                        user.ingresos[i].pasivo = passivesIncomesPropety.val();
-                        localStorage.setItem('user', JSON.stringify(user));
-                        closeModal();
-                        openModalSuccess(2, 'Completado', 'Se edito los ingresos pasivos');
-                        balanceSheet();
-                    }
-                }
-            });
+            iProperty = i;
         });
     });
 
     $('.btn-pay').each(function(i) {
         $(this).click(function () {
             openModal($('.modal--container_pay'));
-
-            $('.btn-payment').click(function() {
-                if(localStorage['user'] && localStorage['cash']){
-                    let user = JSON.parse(localStorage['user']);
-                    let cash = localStorage['cash'];
-
-                    let toPay = ["hipoteca", "colegio", "automovil", "tarjeta", "menores"];
-                    if(parseInt(user.pasivos[toPay[i]]) <= parseInt(cash)) {
-                        cash = parseInt(cash) - parseInt(user.pasivos[toPay[i]]);
-                        user.pasivos[toPay[i]] = 0;
-                        user.gastos[toPay[i]] = 0; 
-
-                        localStorage.setItem('user', JSON.stringify(user));
-                        localStorage.setItem('cash', cash);
-
-                        closeModal();
-                        openModalSuccess(2, 'Completado', '¡Felicidades! Has pagado tu deuda');
-                        balanceSheet();
-                    }else {
-                        closeModal();
-                        openModalSuccess(0, 'Error', 'Uy! Parece que no cuentas con suficiente saldo para realizar esta operacion');
-                        balanceSheet();
-                    }
-                }
-            });
+            iPay = i;
         });
     });
 
     $('.btn-pay-loan').each(function(i) {
         $(this).click(function () {
             openModal($('.modal--container_pay-loan'));
-
-            $('.btn-payment-loan').click(function() {
-                if(localStorage['user'] && localStorage['cash']){
-                    let user = JSON.parse(localStorage['user']);
-                    let cash = localStorage['cash'];
-
-                    if(parseInt(user.pasivos.prestamos[i]) <= parseInt(cash)) {
-                        cash = parseInt(cash) - parseInt(user.pasivos.prestamos[i]);
-                        user.pasivos.prestamos.splice(i, 1);
-                        user.gastos.prestamos.splice(i, 1);
-
-                        if(user.pasivos.prestamos.length == 0) delete user.pasivos.prestamos;
-                        if(user.gastos.prestamos.length == 0) delete user.gastos.prestamos;
-
-                        localStorage.setItem('user', JSON.stringify(user));
-                        localStorage.setItem('cash', cash);
-
-                        closeModal();
-                        openModalSuccess(2, 'Completado', '¡Felicidades! Has pagado tu deuda');
-                        balanceSheet();
-                    }else {
-                        closeModal();
-                        openModalSuccess(0, 'Error', 'Uy! Parece que no cuentas con suficiente saldo para realizar esta operacion');
-                        balanceSheet();
-                    }
-                }
-            });
+            iLoan = i;
         });
     });
 
     
     return null;
 }
+
+$('.btn-sell-shares').click(function () {
+    let costSell = $('#cost-sell');
+
+    let costSellVal = inputValidation(costSell);
+
+    if (costSellVal && localStorage['user'] && localStorage['cash']) {
+        let user = JSON.parse(localStorage['user']);
+        let cash = localStorage['cash'];
+        let revenue = parseInt(user.activos.acciones[iShares].cantidad) * parseInt(costSell.val());
+
+        user.activos.acciones.splice(iShares, 1);
+        cash = parseInt(cash) + revenue;
+
+        localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem('cash', cash);
+
+        closeModal();
+        openModalSuccess(2, 'Completado', '¡Felicidades! Vendiste tus acciones');
+        balanceSheet();
+    }
+});
+
+$('.btn-edit-shares').click(function() {
+    let descriptionShares = $('#description-shares');
+    let quantityShares = $('#quantity-shares');
+
+    let descriptionSharesVal = inputValidation(descriptionShares);
+    let quantitySharesVal = inputValidation(quantityShares);
+
+    if(localStorage['user']){
+        let user = JSON.parse(localStorage['user']);
+        if(descriptionSharesVal && quantitySharesVal) {
+            user.activos.acciones[iShares].descripcion = descriptionShares.val();
+            user.activos.acciones[iShares].cantidad = quantityShares.val();
+            localStorage.setItem('user', JSON.stringify(user));
+            closeModal();
+            openModalSuccess(2, 'Completado', 'Se edito la descripcion y la cantidad de acciones');
+            balanceSheet();
+        }else if(descriptionSharesVal) {
+            user.activos.acciones[iShares].descripcion = descriptionShares.val();
+            localStorage.setItem('user', JSON.stringify(user));
+            closeModal();
+            openModalSuccess(2, 'Completado', 'Se edito la descripcion');
+            balanceSheet();
+        }else if (quantitySharesVal) {
+            user.activos.acciones[iShares].cantidad = quantityShares.val();
+            localStorage.setItem('user', JSON.stringify(user));
+            closeModal();
+            openModalSuccess(2, 'Completado', 'Se edito la cantidad de acciones');
+            balanceSheet();
+        }
+    }
+});
+
+$('.btn-sell-propety').click(function () {
+    let sellPrice = $('#sell-price');
+
+    let sellPriceVal = inputValidation(sellPrice);
+
+    if (sellPriceVal && localStorage['user'] && localStorage['cash']) {
+        let user = JSON.parse(localStorage['user']);
+        let cash = localStorage['cash'];
+        let revenue = parseInt(sellPrice.val()) - parseInt(user.pasivos.hipotecas[iProperty].hipoteca);
+
+        if (revenue >= 0) {
+            user.activos.propiedades.splice(iProperty, 1);
+            user.ingresos.splice(iProperty, 1);
+            user.pasivos.hipotecas.splice(iProperty, 1);
+            cash = parseInt(cash) + revenue;
+
+            localStorage.setItem('user', JSON.stringify(user));
+            localStorage.setItem('cash', cash);
+
+            closeModal();
+            openModalSuccess(2, 'Completado', '¡Felicidades! Vendiste tus acciones');
+            balanceSheet();
+        } else {
+            closeModal();
+            openModalSuccess(1, 'Advertencia', 'Vender esta propiedad a este precio hara pierdas dinero');
+            balanceSheet();
+        }
+
+    }
+});
+
+$('.btn-edit-propety').click(function() {
+    let descriptionPropety = $('#description-propety');
+    let passivesIncomesPropety = $('#passives-incomes-propety');
+
+    let descriptionPropetyVal = inputValidation(descriptionPropety);
+    let passivesIncomesPropetyVal = inputValidation(passivesIncomesPropety);
+
+    if(localStorage['user']){
+        let user = JSON.parse(localStorage['user']);
+        if(descriptionPropetyVal && passivesIncomesPropetyVal) {
+            user.activos.propiedades[iProperty].descripcion = descriptionPropety.val();
+            user.ingresos[iProperty].descripcion = descriptionPropety.val();
+            user.pasivos.hipotecas[iProperty].descripcion = descriptionPropety.val();
+            user.ingresos[iProperty].pasivo = passivesIncomesPropety.val();
+            localStorage.setItem('user', JSON.stringify(user));
+            closeModal();
+            openModalSuccess(2, 'Completado', 'Se edito la descripcion y los ingresos pasivos');
+            balanceSheet();
+        }else if(descriptionPropetyVal) {
+            user.activos.propiedades[iProperty].descripcion = descriptionPropety.val();
+            user.ingresos[iProperty].descripcion = descriptionPropety.val();
+            user.pasivos.hipotecas[iProperty].descripcion = descriptionPropety.val();
+            localStorage.setItem('user', JSON.stringify(user));
+            closeModal();
+            openModalSuccess(2, 'Completado', 'Se edito la descripcion');
+            balanceSheet();
+        }else if (passivesIncomesPropetyVal) {
+            user.ingresos[iProperty].pasivo = passivesIncomesPropety.val();
+            localStorage.setItem('user', JSON.stringify(user));
+            closeModal();
+            openModalSuccess(2, 'Completado', 'Se edito los ingresos pasivos');
+            balanceSheet();
+        }
+    }
+});
+
+$('.btn-payment').click(function() {
+    if(localStorage['user'] && localStorage['cash']){
+        let user = JSON.parse(localStorage['user']);
+        let cash = localStorage['cash'];
+
+        let toPay = ["hipoteca", "colegio", "automovil", "tarjeta", "menores"];
+        if(parseInt(user.pasivos[toPay[iPay]]) <= parseInt(cash)) {
+            cash = parseInt(cash) - parseInt(user.pasivos[toPay[iPay]]);
+            user.pasivos[toPay[iPay]] = 0;
+            user.gastos[toPay[iPay]] = 0; 
+
+            localStorage.setItem('user', JSON.stringify(user));
+            localStorage.setItem('cash', cash);
+
+            closeModal();
+            openModalSuccess(2, 'Completado', '¡Felicidades! Has pagado tu deuda');
+            balanceSheet();
+        }else {
+            closeModal();
+            openModalSuccess(0, 'Error', 'Uy! Parece que no cuentas con suficiente saldo para realizar esta operacion');
+            balanceSheet();
+        }
+    }
+});
+
+$('.btn-payment-loan').click(function() {
+    if(localStorage['user'] && localStorage['cash']){
+        let user = JSON.parse(localStorage['user']);
+        let cash = localStorage['cash'];
+
+        console.log(user.pasivos.prestamos[iLoan]);
+        console.log(iLoan);
+        if(parseInt(user.pasivos.prestamos[iLoan]) <= parseInt(cash)) {
+            cash = parseInt(cash) - parseInt(user.pasivos.prestamos[iLoan]);
+            user.pasivos.prestamos.splice(iLoan, 1);
+            user.gastos.prestamos.splice(iLoan, 1);
+
+            if(user.pasivos.prestamos.length == 0) delete user.pasivos.prestamos;
+            if(user.gastos.prestamos.length == 0) delete user.gastos.prestamos;
+
+            localStorage.setItem('user', JSON.stringify(user));
+            localStorage.setItem('cash', cash);
+
+            closeModal();
+            openModalSuccess(2, 'Completado', '¡Felicidades! Has pagado tu deuda');
+            balanceSheet();
+        }else {
+            closeModal();
+            openModalSuccess(0, 'Error', 'Uy! Parece que no cuentas con suficiente saldo para realizar esta operacion');
+            balanceSheet();
+        }
+    }
+});
 
 function invalidInput(e) {
     e.css('outline', 'solid 2px var(--danger)');
@@ -473,7 +484,7 @@ $('.btn-loan').click(function () {
     let amountVal = inputValidation(amount);
 
     if (localStorage['cash'] && localStorage['user'] && amountVal) {
-        if (parseInt(amount.val()) >= 1000 && (parseInt(amount.val()) % 10) == 0) {
+        if ((parseInt(amount.val()) % 1000) == 0) {
             let cash = localStorage.getItem('cash');
             let prestamo = parseInt(amount.val());
             if (!user.pasivos.prestamos) {
@@ -498,7 +509,7 @@ $('.btn-loan').click(function () {
             openModalSuccess(2, 'Completado', 'Prestamo realizado');
         } else {
             closeModal();
-            openModalSuccess(0, 'Error', 'Solo puede hacer prestamos con un monto mayor de $ 1000 y en multiplos de 10');
+            openModalSuccess(0, 'Error', 'Solo puede hacer prestamos en unidades de $1000');
         }
     }
 
