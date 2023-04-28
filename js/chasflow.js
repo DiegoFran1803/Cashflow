@@ -43,4 +43,3 @@ if(localStorage['user']) {
     $('.flow').text(cashflow);
 }
 
-numberSpace();

@@ -197,7 +197,7 @@ function extensionModal() {
         });
     });
 
-    numberSpace();
+    
     return null;
 }
 

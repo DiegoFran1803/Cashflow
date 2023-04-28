@@ -10,7 +10,7 @@ function financialData() {
         else $('.children-expenses').text('0');
     }
 
-    numberSpace();
+    
 }
 
 financialData();
