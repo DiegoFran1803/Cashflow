@@ -53,6 +53,7 @@ $('.btn-sell-shares').click(function () {
         localStorage.setItem('user', JSON.stringify(user));
         localStorage.setItem('cash', cash);
 
+        cargarSonido('./audio/register.mp3');
         closeModal();
         openModalSuccess(2, 'Completado', '¡Felicidades! Vendiste tus acciones');
         balanceSheet();
@@ -72,18 +73,21 @@ $('.btn-edit-shares').click(function() {
             user.activos.acciones[iShares].descripcion = descriptionShares.val();
             user.activos.acciones[iShares].cantidad = quantityShares.val();
             localStorage.setItem('user', JSON.stringify(user));
+            cargarSonido('./audio/pencil.mp3');
             closeModal();
             openModalSuccess(2, 'Completado', 'Se edito la descripcion y la cantidad de acciones');
             balanceSheet();
         }else if(descriptionSharesVal) {
             user.activos.acciones[iShares].descripcion = descriptionShares.val();
             localStorage.setItem('user', JSON.stringify(user));
+            cargarSonido('./audio/pencil.mp3');
             closeModal();
             openModalSuccess(2, 'Completado', 'Se edito la descripcion');
             balanceSheet();
         }else if (quantitySharesVal) {
             user.activos.acciones[iShares].cantidad = quantityShares.val();
             localStorage.setItem('user', JSON.stringify(user));
+            cargarSonido('./audio/pencil.mp3');
             closeModal();
             openModalSuccess(2, 'Completado', 'Se edito la cantidad de acciones');
             balanceSheet();
@@ -110,10 +114,12 @@ $('.btn-sell-propety').click(function () {
             localStorage.setItem('user', JSON.stringify(user));
             localStorage.setItem('cash', cash);
 
+            cargarSonido('./audio/register.mp3');
             closeModal();
             openModalSuccess(2, 'Completado', '¡Felicidades! Vendiste tus acciones');
             balanceSheet();
         } else {
+            cargarSonido('./audio/warning.mp3');
             closeModal();
             openModalSuccess(1, 'Advertencia', 'Vender esta propiedad a este precio hara pierdas dinero');
             balanceSheet();
@@ -137,6 +143,7 @@ $('.btn-edit-propety').click(function() {
             user.pasivos.hipotecas[iProperty].descripcion = descriptionPropety.val();
             user.ingresos[iProperty].pasivo = passivesIncomesPropety.val();
             localStorage.setItem('user', JSON.stringify(user));
+            argarSonido('./audio/pencil.mp3');
             closeModal();
             openModalSuccess(2, 'Completado', 'Se edito la descripcion y los ingresos pasivos');
             balanceSheet();
@@ -145,12 +152,14 @@ $('.btn-edit-propety').click(function() {
             user.ingresos[iProperty].descripcion = descriptionPropety.val();
             user.pasivos.hipotecas[iProperty].descripcion = descriptionPropety.val();
             localStorage.setItem('user', JSON.stringify(user));
+            argarSonido('./audio/pencil.mp3');
             closeModal();
             openModalSuccess(2, 'Completado', 'Se edito la descripcion');
             balanceSheet();
         }else if (passivesIncomesPropetyVal) {
             user.ingresos[iProperty].pasivo = passivesIncomesPropety.val();
             localStorage.setItem('user', JSON.stringify(user));
+            argarSonido('./audio/pencil.mp3');
             closeModal();
             openModalSuccess(2, 'Completado', 'Se edito los ingresos pasivos');
             balanceSheet();
@@ -172,10 +181,12 @@ $('.btn-payment').click(function() {
             localStorage.setItem('user', JSON.stringify(user));
             localStorage.setItem('cash', cash);
 
+            cargarSonido('./audio/applause.mp3');
             closeModal();
             openModalSuccess(2, 'Completado', '¡Felicidades! Has pagado tu deuda');
             balanceSheet();
         }else {
+            cargarSonido('./audio/fail.mp3');
             closeModal();
             openModalSuccess(0, 'Error', 'Uy! Parece que no cuentas con suficiente saldo para realizar esta operacion');
             balanceSheet();
@@ -201,10 +212,12 @@ $('.btn-payment-loan').click(function() {
             localStorage.setItem('user', JSON.stringify(user));
             localStorage.setItem('cash', cash);
 
+            cargarSonido('./audio/applause.mp3');
             closeModal();
             openModalSuccess(2, 'Completado', '¡Felicidades! Has pagado tu deuda');
             balanceSheet();
         }else {
+            cargarSonido('./audio/fail.mp3');
             closeModal();
             openModalSuccess(0, 'Error', 'Uy! Parece que no cuentas con suficiente saldo para realizar esta operacion');
             balanceSheet();
@@ -395,9 +408,11 @@ $('.btn-buy-shares').click(function () {
             cash = parseInt(cash) - total;
             localStorage.setItem('cash', cash);
 
+            cargarSonido('./audio/register.mp3');
             closeModal();
             openModalSuccess(2, 'Completado', '¡Bien! La compra se realizo con exito');
         } else {
+            cargarSonido('./audio/fail.mp3');
             closeModal();
             openModalSuccess(0, 'Error', '¡Uy! Parece que con cuentas con suficiente saldo para realizar esta accion');
         }
@@ -468,9 +483,11 @@ $('.btn-buy-property').click(function () {
             cash = parseInt(cash) - parseInt(initialPayment.val());
             localStorage.setItem('cash', cash);
 
+            cargarSonido('./audio/register.mp3');
             closeModal();
             openModalSuccess(2, 'Completado', '¡Bien! La compra se realizo con exito');
         } else {
+            cargarSonido('./audio/fail.mp3');
             closeModal();
             openModalSuccess(0, 'Error', '¡Uy! Parece que con cuentas con suficiente saldo para realizar esta accion');
         }
@@ -505,9 +522,11 @@ $('.btn-loan').click(function () {
             localStorage.setItem('cash', cash);
             localStorage.setItem('user', JSON.stringify(user));
     
+            cargarSonido('./audio/register.mp3');
             closeModal();
             openModalSuccess(2, 'Completado', 'Prestamo realizado');
         } else {
+            cargarSonido('./audio/fail.mp3');
             closeModal();
             openModalSuccess(0, 'Error', 'Solo puede hacer prestamos en unidades de $1000');
         }

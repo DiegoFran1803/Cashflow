@@ -11,7 +11,7 @@ function changeAnimation(x) {
         $('.dices-number').text(random.toString());
         c++;
 
-        if (c > 10){
+        if (c > 6){
             press_button = true;
             clearInterval(change);
         }
@@ -21,6 +21,7 @@ function changeAnimation(x) {
 $('.btn_throw').click(function() {
     if (press_button) {
         press_button = false;
+        cargarSonido('./audio/dice.mp3');
         changeAnimation(6);
     }
 });
@@ -28,6 +29,7 @@ $('.btn_throw').click(function() {
 $('.btn_double-throw').click(function() {
     if (press_button) {
         press_button = false;
+        cargarSonido('./audio/dice.mp3');
         changeAnimation(12);
     }
 });

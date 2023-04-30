@@ -101,6 +101,7 @@ function spin() {
   spinAngleStart = Math.random() * 10 + 10;
   spinTime = 0;
   spinTimeTotal = Math.random() * 3 + 4 * 1000;
+  cargarSonido('./audio/tada.mp3');
   rotateWheel();
 }
 
@@ -113,7 +114,7 @@ function rotateWheel() {
   var spinAngle = spinAngleStart - easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);
   startAngle += (spinAngle * Math.PI / 180);
   drawRouletteWheel();
-  spinTimeout = setTimeout('rotateWheel()', 30);
+  spinTimeout = setTimeout('rotateWheel()',15);
 }
 
 function stopRotateWheel() {

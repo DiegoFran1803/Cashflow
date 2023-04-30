@@ -47,6 +47,8 @@ $('.btn-start').click(function() {
 
         localStorage.setItem('user', JSON.stringify(user));
         localStorage.setItem('cash', 0);
+
+        cargarSonido('./audio/start.mp3');
         financialData()
         closeModal();
         openModalSuccess(2, 'Completado', 'La partida se inicio correctamente ¡A Jugar!');
