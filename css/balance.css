@@ -16,3 +16,25 @@ table .td_icon {
     text-align: center;
     color: var(--dark);
 }
+
+.btn-add-passives, .btn-add-assets {
+    width: 100%;
+    margin-bottom: 10px;
+    color: var(--warning);
+    border: solid 1px var(--warning); 
+}
+
+.btn-add-passives:hover {
+    color: var(--white);
+    background-color: var(--warning);
+}
+
+.btn-add-assets {
+    color: var(--info);
+    border: solid 1px var(--info); 
+}
+
+.btn-add-assets:hover {
+    color: var(--white);
+    background-color: var(--info);
+}

@@ -36,10 +36,11 @@
     <main>
         <h2 class="balance-sheet--title">Balance General</h2>
         <section class="balance-sheet__assets">
+            <button class="btn-add-assets">Comprar un activo</button>
             <div class="overflow-x">
                 <table class="balance-sheet--table__assets table-overflow-x">
                     <tr class="thead-info">
-                        <td colspan="4"><button class="btn-add-assets"><i class="fas fa-plus-square fa-lg"></i></button> Activos</td>
+                        <td colspan="4">Activos</td>
                     </tr>
                     <tr class="thead-secondary">
                         <td class="td_icon">Vender</td>
@@ -62,10 +63,11 @@
         <hr>
 
         <section class="balance-sheet__passives">
+            <button class="btn-add-passives">Hacer un prestamo</button>
             <div class="overflow-x">
                 <table class="balance-sheet--table__passives table-overflow-x">
                     <tr class="thead-warning">
-                        <td colspan="3"><button class="btn-add-passives"><i class="fas fa-plus-square fa-lg"></i></button>Pasivos</td>
+                        <td colspan="3">Pasivos</td>
                     </tr>
                     <tr class="thead-secondary">
                         <td class="td_icon">Pagar</td>
@@ -361,9 +363,15 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-    <script src="./js/version.js"></script>
+    <script src="./js/tools.js"></script>
+    <script src="./js/manager.js"></script>
+    <script src="./js/painter.js"></script>
     <script src="./js/modal.js"></script>
-    <script src="./js/balance.js"></script>
-    <script src="./js/cuenta.js"></script>
+    
+    <script src="./js/balance/activeButtons.js"></script>
+    <script src="./js/balance/paint.js"></script>
+    <script src="./js/balance/account.js"></script>
+    <script src="js/balance/addButtons.js"></script>
+    <script src="js/balance/adminButtons.js"></script>
 </body>
 </html>

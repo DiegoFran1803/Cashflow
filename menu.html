@@ -21,7 +21,7 @@
             <a href="javascript:history.back()"><i class="fas fa-arrow-left"></i></a> 
         </nav>
         <div class="profile">
-            <img class="perfil-photo" src="./img/rata.png" alt="">
+            <img class="perfil-photo" src="./img/rata.jpg" alt="">
             <h4 class="name">Usuario<h4>
             <p class="ocupation">Profesion</p>
         </div>
@@ -57,59 +57,11 @@
     </footer>
     
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-    <script src="./js/version.js"></script>
-    <script>
-        if(localStorage['user']) {
-            let user = JSON.parse(localStorage.getItem('user'));
-            let incomes = 0;
-            for (let key in user.ingresos) {
-                incomes += parseInt(user.ingresos[key].pasivo);
-            }
+    <script src="./js/tools.js"></script>
+    <script src="./js/manager.js"></script>
+    <script src="./js/painter.js"></script>
 
-            let loans = 0;
-            if(user.gastos.prestamos && user.gastos.prestamos.lenght != 0) {
-                
-                for (let key in user.gastos.prestamos) {
-                    if(key != 0) loans += parseInt(user.gastos.prestamos[key]);
-                }
-            }
-
-            let expenses = 0;
-            for (let key in user.gastos) {
-                expenses += parseInt(user.gastos[key]);
-            }
-
-            expenses += loans;
-
-            $('.missing').text(expenses - incomes);
-            $('.ratio').text(Math.trunc((incomes/expenses) * 100) );
-
-            $('.name').text(user.nombre);
-            $('.ocupation').text(user.profesion);
-
-            if(user.profesion == 'Gerente') $('.perfil-photo').attr('src', './img/porky.jpg');
-            else if(user.profesion == 'Ingeniero') $('.perfil-photo').attr('src', './img/fujimori.jpg');
-            else if(user.profesion == 'Mecanico') $('.perfil-photo').attr('src', './img/vizcarra.jpg');
-            else if(user.profesion == 'Medico') $('.perfil-photo').attr('src', './img/acuna.jpg');
-            else if(user.profesion == 'Secretaria') $('.perfil-photo').attr('src', './img/dina.jpg');
-            else if(user.profesion == 'Profesor') $('.perfil-photo').attr('src', './img/castillo.jpg');
-            else if(user.profesion == 'Camionero') $('.perfil-photo').attr('src', './img/ppk.jpg');
-            else if(user.profesion == 'Conserje') $('.perfil-photo').attr('src', './img/antauro.jpg');
-            else if(user.profesion == 'Abogado') $('.perfil-photo').attr('src', './img/rata.jpg');
-            else if(user.profesion == 'Enfermera') $('.perfil-photo').attr('src', './img/keiko.jpg');
-            else if(user.profesion == 'Policia') $('.perfil-photo').attr('src', './img/humala.jpg');
-            else if(user.profesion == 'Piloto') $('.perfil-photo').attr('src', './img/toledo.jpg');
-        
-            if(user.nombre == 'Jonh Wick') $('.perfil-photo').attr('src', './img/jonh.jpg');
-            else if(user.nombre == 'Batman') $('.perfil-photo').attr('src', './img/batman.jpg');
-            else if(user.nombre == 'CR7' || user.nombre == 'Cristiano Ronaldo') $('.perfil-photo').attr('src', './img/cr7.jpg');
-            else if(user.nombre == 'D10S' || user.nombre == 'Lionel Messi' || user.nombre == 'Messi') $('.perfil-photo').attr('src', './img/messi.jpg');
-            else if(user.nombre == 'Ronaldinho') $('.perfil-photo').attr('src', './img/ronaldinho.jpg');
-            else if(user.nombre == 'Jesus') $('.perfil-photo').attr('src', './img/jesus.jpg');
-            else if(user.nombre == 'Pepa' || user.nombre == 'Pepa Pig') $('.perfil-photo').attr('src', './img/pepa.jpg');
-        }
-
-        
-    </script>
+    <script src="./js/menu/profile.js"></script>
+    <script src="./js/menu/paint.js"></script>
 </body>
 </html>
