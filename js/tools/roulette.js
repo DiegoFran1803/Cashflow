@@ -106,7 +106,7 @@ function spin() {
 }
 
 function rotateWheel() {
-  spinTime += 30;
+  spinTime += 10;
   if(spinTime >= spinTimeTotal) {
     stopRotateWheel();
     return;
@@ -114,7 +114,7 @@ function rotateWheel() {
   var spinAngle = spinAngleStart - easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);
   startAngle += (spinAngle * Math.PI / 180);
   drawRouletteWheel();
-  spinTimeout = setTimeout('rotateWheel()',15);
+  spinTimeout = setTimeout('rotateWheel()', 3);
 }
 
 function stopRotateWheel() {

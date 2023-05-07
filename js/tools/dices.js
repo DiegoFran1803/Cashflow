@@ -11,11 +11,11 @@ function changeAnimation(x) {
         $('.dices-number').text(random.toString());
         c++;
 
-        if (c > 6){
+        if (c > 5){
             press_button = true;
             clearInterval(change);
         }
-    }, 200);
+    }, 150);
 }
 
 $('.btn_throw').click(function() {
