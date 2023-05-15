@@ -36,7 +36,7 @@ body {
 
 .version {
     position: absolute;
-    bottom: 70px;
+    bottom: 65px;
     left: 0;
     width: 100%;
     text-align: center;
@@ -44,8 +44,8 @@ body {
 
 .version p {
     font-size: 1.3rem;
-    font-weight: 300;
-    color: var(--white);
+    font-weight: 400;
+    color: var(--dark);
 }
 
 .footbar {

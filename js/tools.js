@@ -1,5 +1,5 @@
 //Version del sistema
-let version = 'Beta 1.1.0';
+let version = 'Beta 1.1.1';
 $('.version-code').text(version);
 
 //Pintar input de rojo

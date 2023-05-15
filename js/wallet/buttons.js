@@ -2,6 +2,7 @@
 $('.btn-income').click(function() {
     //Traer los datos
     let user = getData('user');
+    let cash = parseInt(user.cash)
 
     //Variables
     let newCash = $('.card--input');
@@ -11,12 +12,10 @@ $('.btn-income').click(function() {
     newCash.css('outline', 'none');
     if(newCashValidation) {
         //Dinero total
-        let cash = parseInt(user.cash) + parseInt(newCash.val());
-
-        //Agregar dinero
-        user.cash = cash;
+        cash += parseInt(newCash.val());
 
         //Subir datos
+        user.cash = cash;
         setData('user', user);
 
         //Efectos de sonido
@@ -32,6 +31,7 @@ $('.btn-income').click(function() {
 $('.btn-expense').click(function() {
     //Traer los datos
     let user = getData('user');
+    let cash = parseInt(user.cash)
 
     //Variables
     let newCash = $('.card--input');
@@ -41,13 +41,13 @@ $('.btn-expense').click(function() {
     newCash.css('outline', 'none');
     if(newCashValidation) {
         //Dinero total
-        let cash = parseInt(user.cash) - parseInt(newCash.val());
+        cash -= parseInt(newCash.val());
 
         //Quitar dinero
-        if(cash > 0) user.cash = cash;
-        else user.cash = 0;
+        if(cash < 0) cash = 0;
 
         //Subir datos
+        user.cash = cash;
         setData('user', user);
 
         //Efectos de sonido
@@ -82,8 +82,8 @@ $('.btn-cashflow').click(function() {
     //Traer los datos
     let user = getData('user');
     let cash = parseInt(user.cash);
-    let incomes = (parseInt(user.incomes.salary)) + additionArray(user.incomes.properties);
-    let expenses = additionArray(user.expenses.default) + (parseInt(user.expenses.children.cost) * parseInt(user.expenses.children.number) + additionArray(user.expenses.loans));
+    let incomes = parseInt(user.incomes.salary) + additionArrayObject(user.incomes.properties, 'income');
+    let expenses = additionArray(user.expenses.default) + ((parseInt(user.expenses.children.cost) * parseInt(user.expenses.children.number)) + additionArray(user.expenses.loans));
 
     //Calcular flujo de caja
     let cashflow = incomes - expenses;
