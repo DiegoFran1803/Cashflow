@@ -8,6 +8,7 @@ $('.btn-income').click(function() {
 
     //Validacion
     let newCashValidation = inputValidation(newCash);
+    newCash.css('outline', 'none');
     if(newCashValidation) {
         //Dinero total
         let cash = parseInt(user.cash) + parseInt(newCash.val());
@@ -37,6 +38,7 @@ $('.btn-expense').click(function() {
 
     //Validacion
     let newCashValidation = inputValidation(newCash);
+    newCash.css('outline', 'none');
     if(newCashValidation) {
         //Dinero total
         let cash = parseInt(user.cash) - parseInt(newCash.val());

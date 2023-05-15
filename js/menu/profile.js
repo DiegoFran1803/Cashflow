@@ -2,8 +2,21 @@ if(localStorage['user']) {
 //Traer los datos
 let user = getData('user');
 
+if(user.profession == 'Gerente') paintImage('.perfil-photo', './img/ma_gerente.png');                 
+else if(user.profession == 'Ingeniero') paintImage('.perfil-photo', './img/ma_ingeniera.png'); 
+else if(user.profession == 'Mecanico') paintImage('.perfil-photo', './img/ma_mecanico.png'); 
+else if(user.profession == 'Medico') paintImage('.perfil-photo', './img/ma_doctor.png'); 
+else if(user.profession == 'Secretaria') paintImage('.perfil-photo', './img/ma_secretaria.png'); 
+else if(user.profession == 'Profesor') paintImage('.perfil-photo', './img/ma_profesor.png'); 
+else if(user.profession == 'Camionero') paintImage('.perfil-photo', './img/ma_camionero.png'); 
+else if(user.profession == 'Conserje') paintImage('.perfil-photo', './img/ma_conserje.png'); 
+else if(user.profession == 'Abogado') paintImage('.perfil-photo', './img/ma_abogada.png'); 
+else if(user.profession == 'Enfermera') paintImage('.perfil-photo', './img/ma_enfermera.png'); 
+else if(user.profession == 'Policia') paintImage('.perfil-photo', './img/ma_policia.png'); 
+else if(user.profession == 'Piloto') paintImage('.perfil-photo', './img/ma_piloto.png'); 
+
 //Pintar imagenes segun la profession
-if(user.profession == 'Gerente') paintImage('.perfil-photo', './img/porky.jpg');
+/*if(user.profession == 'Gerente') paintImage('.perfil-photo', './img/porky.jpg');
 else if(user.profession == 'Ingeniero') paintImage('.perfil-photo', './img/fujimori.jpg'); 
 else if(user.profession == 'Mecanico') paintImage('.perfil-photo', './img/vizcarra.jpg'); 
 else if(user.profession == 'Medico') paintImage('.perfil-photo', './img/acuna.jpg'); 
@@ -24,4 +37,4 @@ else if(user.name == 'D10S' || user.name == 'Lionel Messi' || user.name == 'Mess
 else if(user.name == 'Ronaldinho') paintImage('.perfil-photo', './img/ronaldinho.jpg');
 else if(user.name == 'Jesus') paintImage('.perfil-photo', './img/jesus.jpg');
 else if(user.name == 'Pepa' || user.name == 'Pepa Pig') paintImage('.perfil-photo', './img/pepa.jpg');
-}
+*/}
