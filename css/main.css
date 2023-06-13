@@ -1,11 +1,11 @@
 /*Variables*/
 :root {
-    --primary: /*#224b8d*/ #f07491;
-    --secondary: /*#1a3b70*/ #e01a4b;
-    --success: /*#28B05D*/ #d8175b;
-    --warning: /*#F59902*/ #d8175b;
-    --danger: /*#EF4B54*/ #d8175b;
-    --info: /*#630E63*/ #d8175b;
+    --primary: #224b8d;
+    --secondary: #1a3b70;
+    --success: #28B05D;
+    --warning: #F59902;
+    --danger: #EF4B54;
+    --info: #630E63;
     --gray: #D9D9D9;
     --light: #EEEEEE;
     --white: #F4F4F4;
